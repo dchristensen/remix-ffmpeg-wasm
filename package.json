@@ -12,10 +12,13 @@
     "redirects:disable": "shx rm -f public/_redirects"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.7",
+    "@ffmpeg/util": "^0.12.1",
     "@netlify/functions": "^2.0.0",
     "@netlify/remix-adapter": "^2.0.0",
     "@remix-run/react": "^2.3.1",
     "cross-env": "^7.0.3",
+    "patch-package": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shx": "^0.3.4"
