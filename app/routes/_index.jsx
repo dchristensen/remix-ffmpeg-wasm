@@ -8,16 +8,12 @@ export default function Index() {
   const load = async () => {
     const ffmpeg = new FFmpeg();
 
+    const baseURL = '/@ffmpeg/core@0.12.6/dist/esm';
     await ffmpeg.load({
-      coreURL: await toBlobURL('/@ffmpeg/core/dist/esm/ffmpeg-core.js', 'text/javascript'),
-      wasmURL: await toBlobURL('/@ffmpeg/core/dist/esm/ffmpeg-core.wasm', 'application/wasm'),
+      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+      classWorkerURL: await toBlobURL('/', 'text/javascript'),
     });
-
-    // const baseURL = 'https://unpkg.com/@ffmpeg/core@0.12.4/dist/esm';
-    // await ffmpeg.load({
-    //   coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
-    //   wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-    // });
 
     setLoaded(true);
   };
